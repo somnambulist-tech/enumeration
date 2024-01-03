@@ -57,6 +57,8 @@ function handleHttpRequest(HttpRequestMethod $method, $url, $body = null)
 }
 ```
 
+__Note:__ for simple enumerations, it is recommended to use PHPs native backed enums.
+
 [c++ enumerated types]: https://en.wikipedia.org/wiki/Enumerated_type#C.2B.2B
 
 ## Accessing enumeration members
@@ -95,7 +97,7 @@ in this implementation are Multitons. The `AbstractEnumeration` class simply
 defines its members based upon class constants.
 
 Here is an example borrowed from the Java documentation for its enum types. The
-following multiton describes all of the planets in our solar system, including
+following multiton describes all the planets in our solar system, including
 their masses and radii:
 
 ```php
@@ -138,7 +140,8 @@ final class Planet extends AbstractMultiton
         new static('SATURN',  5.6851e26, 6.0268e7);
         new static('URANUS',  8.6849e25, 2.5559e7);
         new static('NEPTUNE', 1.0244e26, 2.4764e7);
-        // new static('PLUTO',   1.31e22,   1.180e6);
+        // Pluto will always be a planet to me!
+        new static('PLUTO',   1.31e22,   1.180e6);
     }
 
     /**
@@ -160,7 +163,7 @@ final class Planet extends AbstractMultiton
 ```
 
 The above class can be used to take a known weight on earth (in any unit) and
-calculate the weight on all of the planets (in the same unit):
+calculate the weight on all the planets (in the same unit):
 
 ```php
 $earthWeight = 175;

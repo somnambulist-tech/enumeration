@@ -473,6 +473,13 @@ abstract class AbstractMultiton implements MultitonInterface
         throw new RuntimeException(sprintf('Cannot unserialize instances of %s', self::class));
     }
 
+    final public function __set(string $name, $value): void
+    {
+    }
+
+    final public function __unset(string $name): void
+    {
+    }
 
     /**
      * Registers the supplied member.
