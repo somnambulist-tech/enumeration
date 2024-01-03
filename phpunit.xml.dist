@@ -9,7 +9,7 @@
   </coverage>
   <testsuites>
     <testsuite name="main">
-      <directory>test/suite</directory>
+      <directory>tests</directory>
     </testsuite>
   </testsuites>
   <logging/>
