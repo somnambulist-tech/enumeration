@@ -18,12 +18,12 @@ abstract class AbstractValueMultiton extends AbstractMultiton implements ValueMu
      * @api
      *
      * @param mixed     $value           The value associated with the member.
-     * @param bool|null $isCaseSensitive True if the search should be case sensitive.
+     * @param bool|null $isCaseSensitive True if the search should be case-sensitive.
      *
      * @return static                            The first member with the supplied value.
      * @throws UndefinedMemberExceptionInterface If no associated member is found.
      */
-    final public static function memberByValue($value, $isCaseSensitive = null)
+    final public static function memberByValue($value, ?bool $isCaseSensitive = null)
     {
         return static::memberBy('value', $value, $isCaseSensitive);
     }
@@ -36,14 +36,14 @@ abstract class AbstractValueMultiton extends AbstractMultiton implements ValueMu
      *
      * @param mixed                       $value           The value associated with the member.
      * @param ValueMultitonInterface|null $default         The default value to return.
-     * @param bool|null                   $isCaseSensitive True if the search should be case sensitive.
+     * @param bool|null                   $isCaseSensitive True if the search should be case-sensitive.
      *
      * @return static The first member with the supplied value, or the default value.
      */
     final public static function memberByValueWithDefault(
         $value,
-        ValueMultitonInterface $default = null,
-        $isCaseSensitive = null
+        ?ValueMultitonInterface $default = null,
+        ?bool $isCaseSensitive = null
     ) {
         return static::memberByWithDefault(
             'value',
@@ -60,14 +60,14 @@ abstract class AbstractValueMultiton extends AbstractMultiton implements ValueMu
      * @api
      *
      * @param mixed|null $value           The value associated with the member, or null.
-     * @param bool|null  $isCaseSensitive True if the search should be case sensitive.
+     * @param bool|null  $isCaseSensitive True if the search should be case-sensitive.
      *
      * @return static|null                       The first member with the supplied value, or null if the supplied value is null.
      * @throws UndefinedMemberExceptionInterface If no associated member is found.
      */
     final public static function memberOrNullByValue(
         $value,
-        $isCaseSensitive = null
+        ?bool $isCaseSensitive = null
     ) {
         return static::memberOrNullBy('value', $value, $isCaseSensitive);
     }
@@ -78,11 +78,11 @@ abstract class AbstractValueMultiton extends AbstractMultiton implements ValueMu
      * @api
      *
      * @param mixed     $value           The value associated with the members.
-     * @param bool|null $isCaseSensitive True if the search should be case sensitive.
+     * @param bool|null $isCaseSensitive True if the search should be case-sensitive.
      *
      * @return array<string,static> All members with the supplied value.
      */
-    final public static function membersByValue($value, $isCaseSensitive = null)
+    final public static function membersByValue($value, ?bool $isCaseSensitive = null)
     {
         return static::membersBy('value', $value, $isCaseSensitive);
     }

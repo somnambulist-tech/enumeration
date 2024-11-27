@@ -23,7 +23,7 @@ abstract class AbstractUndefinedMemberException extends Exception implements Und
         $className,
         $property,
         $value,
-        Exception $cause = null
+        ?Exception $cause = null
     ) {
         $this->className = $className;
         $this->property = $property;
